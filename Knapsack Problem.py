@@ -32,7 +32,7 @@ def backpack(n, v, w, maxw):
     for i in range(1, n+1):
         for x in range(maxw+1):
             if x < w[i-1]:
-                vmatrix[x, i] = vmatrix[x, i]
+                vmatrix[x, i] = vmatrix[x, i-1]
             else:
                 vmatrix[x, i] = max(vmatrix[x, i-1], v[i-1] + vmatrix[x-w[i-1], i-1])
     return vmatrix
